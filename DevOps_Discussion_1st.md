@@ -1,4 +1,4 @@
-# DevOps 연구소 좌담회 - 1차
+# \DevOps 연구소 좌담회 - 1차
 > [GYUSEOK LEE](https://www.linkedin.com/in/gyuseok-lee-a437729a/)
 
 ### Q. 컨테이너란 무엇일까?
