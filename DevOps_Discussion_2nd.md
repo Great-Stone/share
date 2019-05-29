@@ -25,7 +25,6 @@
 - **컨테이너 환경 사용 후** : 예상되는 피크시간대에 자동으로 컨테이너를 확장하는 방식으로 트래픽 처리하는 방식으로 변경, 서비스 중에도 로직을 변경하여 적용할 수 있는 이점 확보
 
 
-
 ### Q. 어디에 쓰지 못할까?
 
 1. System reliability 유지를 위한 환경
@@ -43,14 +42,12 @@
 - 스타트업의 경우 서버를 구축해서 사용하기 보다는 어느정도 서비스 형태로 된 컨테이너 서비스를 사용할 후 구축해보는 것을 추천한다.
 
 
-
 ### Q. 컨테이너 사용 시 주의 사항
 
 - 대문자 주의!
 - 컨테이너 빌드 시 베이스 이미지도 지속적으로 관리 필요 (버전 등)
 - 주객전도 주의! 비즈니스에 포커싱하자!
 - 개발자 판단 후 결정이 필요
-
 
 
 ### Appendix
@@ -67,21 +64,14 @@
   - <https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users/>
 
   - Docker
-
     - 단일 프로세스가 단일 실패 지점이 될 수 있습니다.
-
     - 이 프로세스는 모든 하위 프로세스 (실행중인 컨테이너)를 소유합니다.
-
     - 상위 프로세스에 문제가 발생하면 컨트롤에서 벗어나는 프로세스가 발생합니다.
-
     - 컨테이너 환경으로 인해 보안 취약성이 발생할 수 있습니다.
-
     - 모든 Docker 작업은 동일한 전체 루트 권한을 가진 사용자 (또는 사용자)가 수행해야했습니다.
-
-      ![Docker Work - Docker ìí¤íì² ê°ì](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig1.png)
+      ![Docker Work - Docker](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig1.png)
 
   - Podman
-
+    - [Podman site](https://podman.io/blogs/)
     - Podman 방식은 이미지 레지스트리, 컨테이너 및 이미지 저장소, runC 컨테이너 런타임 프로세스 (no Daemon)를 통해 Linux 커널과 직접 상호 작용하는 것입니다.
-
-      ![í¬ëë§ ìí¤íì² ì ê·¼ ë°©ì](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig2.png)
+      ![Podman Work - Podman](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig2.png)
