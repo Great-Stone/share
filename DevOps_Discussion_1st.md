@@ -4,16 +4,12 @@
 ### Q. 컨테이너란 무엇일까?
 
 - 자원을 잘 나눠주는 프로세스.
-
-- Zip같은 패키지인데 바퀴도 있고 엔진도 있
-
+- Zip같은 패키지인데 바퀴도 있고 엔진도 있는
 - 개발자들의 공용어
-
 - VM이 H/W와의 분리였다면 컨테이너는 OS와 분리
-
 - 떠나보낸 연인...하지만 사랑한다
 
-  
+![](https://github.com/Great-Stone/share/blob/master/assets/img/DevOps_Discussion_1st_001.jpg)
 
 ### Q. 왜 쓸까?
 - 효율성
