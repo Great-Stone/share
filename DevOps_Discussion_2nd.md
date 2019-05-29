@@ -58,9 +58,9 @@
 - **KEDA**
 
   - <https://github.com/kedacore/keda>
-- 마이크로소프트(MS)가 레드햇과 손잡고 개발한 컨테이너 인프라의 확장(scaling) 자동화 기술입니다.
+  - 마이크로소프트(MS)가 레드햇과 손잡고 개발한 컨테이너 인프라의 확장(scaling) 자동화 기술입니다.
   - CPU 메트릭 정보를 기반으로 했던 확장방식의 한계를 넘어 주요 '이벤트'를 기반으로 확장을 정의, 수행할 수 있습니다.
-- 즉, Kubernetes Metrics Server 역할을하며 사용자는 전용 Kubernetes 사용자 지정 리소스 정의를 사용하여 자동 확장(Autoscaling)을 위한 규칙을 정의 할 수 있습니다.
+  - 즉, Kubernetes Metrics Server 역할을하며 사용자는 전용 Kubernetes 사용자 지정 리소스 정의를 사용하여 자동 확장(Autoscaling)을 위한 규칙을 정의 할 수 있습니다.
   
 - **Podman vs. Docker**
 
