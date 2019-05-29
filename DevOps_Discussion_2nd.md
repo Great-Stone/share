@@ -1,5 +1,5 @@
 # DevOps 연구소 좌담회 - 2차
-> JUHEE KANG / GYUSEOK LEE
+> [JUHEE KANG](https://www.linkedin.com/in/claudiajkang/) / [GYUSEOK LEE](https://www.linkedin.com/in/gyuseok-lee-a437729a/)
 
 ### Q. 컨테이너란?
 
