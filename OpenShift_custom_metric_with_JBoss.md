@@ -1,3 +1,5 @@
+# Autoscaling applications using custom metrics on OpenShift Container Platform 3.11 with JBoss EAP and Wildfly
+
 Red Hat OpenShift Container Platform 3.11 (OCP) 은 기본적으로 CPU에 대한 애플리케이션 자동 확장을 지원합니다. 추가적으로 `apis/autoscaling/v2beta1`를 활성화하여 [Memory의 메트릭을 기반으로 한 기능](#2-Memory-based-HPA)도 지원 합니다. CPU나 Memory의 경우 애플리케이션에 종속되지 않은 기본적인 메트릭이나, 때로는 추가적인 메트릭 요소를 기반으로 확장할 필요성이 있습니다.
 
 Prometheus Adaptor를 사용하면 기본 메트릭 외에도 사용자가 지정한 애플리케이션의 메트릭을 기반으로 자동확장하는 기능을 추가 할 수 있습니다.
@@ -59,7 +61,7 @@ OpenShift Container Platform 3.11 환경에 Operator를 활성화 하기 위한 
 
 Operator framework가 설치되면 Cluster Console 에서 좌측 메뉴에 추가된 `Operators` 를 확인 할 수 있습니다.
 
-![image-20200129150607944](C:UsersgyuleeiCloudDriveMarkupimages%5Cimage-20200129150607944.png)
+![image-20200129150607944]()
 
 
 
