@@ -61,7 +61,7 @@ OpenShift Container Platform 3.11 환경에 Operator를 활성화 하기 위한 
 
 Operator framework가 설치되면 Cluster Console 에서 좌측 메뉴에 추가된 `Operators` 를 확인 할 수 있습니다.
 
-![image-20200129150607944]()
+![image-20200129150607944](http://raw.githubusercontent.com/Great-Stone/share/master/assets/img/OpenShift_custom_metric_with_JBoss/operator.png)
 
 
 
@@ -868,10 +868,5 @@ EOF
 #### 2) Application Console 활용
 
 OpenShift Application Console 에 접속 합니다. 적용할 프로젝트를 클릭하고 `Overview` 화면의 우측 상단에 `Add to Project`를 클릭합니다.
-
-![image-20200129153727335](C:UsersgyuleeiCloudDriveMarkupimages%5Cimage-20200129153727335.png)
-
 `Import YAML/JSON`을 클릭하여 리소스 설정을 입력받는 창에 앞서의 예로 작성된 설정을 붙여넣습니다. 또는 파일로 저장된 파일을 선택하여 업로드/적용 가능합니다. `Create` 버튼을 클릭하여 결과를 확인합니다.
-
-![image-20200129153918721](C:UsersgyuleeiCloudDriveMarkupimages%5Cimage-20200129153918721.png)
 
