@@ -10,4 +10,4 @@
 ---
 ## OpenShift
 
-- [Autoscaling applications using custom metrics on OpenShift Container Platform 3.11 with JBoss EAP and Wildfly](https://great-stone.github.io/share/OpenShift_custom_metric_with_JBoss)
+- [Autoscaling applications using custom metrics on OpenShift Container Platform 3.11 with JBoss EAP and Wildfly (KR)](https://great-stone.github.io/share/OpenShift_custom_metric_with_JBoss)
