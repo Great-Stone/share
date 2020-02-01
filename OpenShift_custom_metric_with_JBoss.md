@@ -1,4 +1,4 @@
-# Autoscaling applications using custom metrics on OpenShift Container Platform 3.11 with JBoss EAP and Wildfly
+# Autoscaling applications using custom metrics on OpenShift Container Platform 3.11 with JBoss EAP or Wildfly
 
 Red Hat OpenShift Container Platform 3.11 (OCP) 은 기본적으로 CPU에 대한 애플리케이션 자동 확장을 지원합니다. 추가적으로 `apis/autoscaling/v2beta1`를 활성화하여 [Memory의 메트릭을 기반으로 한 기능](#2-Memory-based-HPA)도 지원 합니다. CPU나 Memory의 경우 애플리케이션에 종속되지 않은 기본적인 메트릭이나, 때로는 추가적인 메트릭 요소를 기반으로 확장할 필요성이 있습니다.
 
