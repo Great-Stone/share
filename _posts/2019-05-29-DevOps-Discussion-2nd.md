@@ -6,6 +6,12 @@ categories:
 last_modified_at: 2019-05-29T08:06:00-05:00
 ---
 
+[컨테이너 연구소](https://www.facebook.com/groups/ContainersLab) - 컨테이너 시스템의 활용 방향 및 미래에 관련해서 좌담 part2
+
+장소 : 대륭서초타워 베스핀글로벌 [링크](https://www.facebook.com/groups/ContainersLab/permalink/593428921163895/?__cft__[0]=AZWv-Ae3xWrhh-SrIPGnG3Of9aGv-4ves7wY9nyg5DNcjSpKcn9I1FlmEn22O8JiXSbNZ8uD0o31PVVjgwK8J9edy-AznNo4PcH_SkwDbcvsJQiBsjWbgFC303zAqzimiqxbzKjiHynyKxNLScgJooIYq4Y8BRLhpeP7EGfbrJACE_BGy5tvuzbQaLAqZmxmBRs&__tn__=%2CO%2CP-R)
+
+
+
 ### Q. 컨테이너란?
 
 - Namespace가 지원되는 Process (Tech 관점)
@@ -41,10 +47,14 @@ last_modified_at: 2019-05-29T08:06:00-05:00
 ### Q. 편하게 사용할 수 있는 컨테이너?
 
 - 컨테이너는 rootless 하다.
+
 - kubernetes는 할렘가 같다
   - 사용하지 않는 자원으로 인한 소비가 많다.
   - 이런건 MicroVM으로 해결하능할 것으로 예상한다.
+  
 - 스타트업의 경우 서버를 구축해서 사용하기 보다는 어느정도 서비스 형태로 된 컨테이너 서비스를 사용할 후 구축해보는 것을 추천한다.
+
+  
 
 
 ### Q. 컨테이너 사용 시 주의 사항

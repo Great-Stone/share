@@ -6,6 +6,11 @@ categories:
 last_modified_at: 2019-05-29T08:06:00-05:00
 ---
 
+[컨테이너 연구소](https://www.facebook.com/groups/ContainersLab) - 컨테이너 시스템의 활용 방향 및 미래에 관련해서 좌담
+
+장소 : 메가존 지하 강연장 [링크](https://www.facebook.com/groups/ContainersLab/permalink/574875686352552/?__cft__[0]=AZWnS4aKkWGMPbMkAiYQs1hiGI25ctSJW3BsAXDvYU1grPKtYkfY_GvCi0HTphGKhoV-KATRdOIHE5StOIiZIf0WlLOLL2QI6QKJ--ep8v4c3YoSpUHD5x6Ko65l_riJmvqF17a9-XtIPbCVmNUJRVOZQ-bKHY4jQ7i_BFNfG0-SF0O-FLbZeRbJhncn3NRlHzF5R5Frk_NwiQ896x_FNkkU&__tn__=%2CO%2CP-R)
+
+
 
 ### Q. 컨테이너란 무엇일까?
 
