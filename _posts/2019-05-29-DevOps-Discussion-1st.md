@@ -1,6 +1,9 @@
 ---
 title:  "DevOps 연구소 좌담회 - 1차"
 search: true
+toc: true
+toc_sticky: true
+comments: true
 categories: 
   - DevOps
 last_modified_at: 2019-05-29T08:06:00-05:00
