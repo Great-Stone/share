@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://great-stone.github.io/sitemap.xml
