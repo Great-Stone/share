@@ -1,0 +1,72 @@
+I"#<p><a href="https://www.facebook.com/groups/ContainersLab">컨테이너 연구소</a> - 컨테이너 시스템의 활용 방향 및 미래에 관련해서 좌담</p>
+
+<p>장소 : 메가존 지하 강연장 <a href="https://www.facebook.com/groups/ContainersLab/permalink/574875686352552/?__cft__[0]=AZWnS4aKkWGMPbMkAiYQs1hiGI25ctSJW3BsAXDvYU1grPKtYkfY_GvCi0HTphGKhoV-KATRdOIHE5StOIiZIf0WlLOLL2QI6QKJ--ep8v4c3YoSpUHD5x6Ko65l_riJmvqF17a9-XtIPbCVmNUJRVOZQ-bKHY4jQ7i_BFNfG0-SF0O-FLbZeRbJhncn3NRlHzF5R5Frk_NwiQ896x_FNkkU&amp;__tn__=%2CO%2CP-R">링크</a></p>
+
+<h3 id="q-컨테이너란-무엇일까">Q. 컨테이너란 무엇일까?</h3>
+
+<ul>
+  <li>
+    <p>자원을 잘 나눠주는 프로세스.</p>
+  </li>
+  <li>
+    <p>Zip같은 패키지인데 바퀴도 있고 엔진도 있는</p>
+  </li>
+  <li>
+    <p>개발자들의 공용어</p>
+  </li>
+  <li>
+    <p>VM이 H/W와의 분리였다면 컨테이너는 OS와 분리</p>
+  </li>
+  <li>
+    <p>떠나보낸 연인…하지만 사랑한다</p>
+
+    <p><img src="https://github.com/Great-Stone/share/blob/master/assets/img/DevOps_Discussion_1st_001.jpg?raw=true" alt="" /></p>
+  </li>
+</ul>
+
+<h3 id="q-왜-쓸까">Q. 왜 쓸까?</h3>
+<ul>
+  <li>효율성</li>
+  <li>불변성</li>
+  <li>코드나 사람에 대한 종속성 제거</li>
+  <li>OS 커플링 제거</li>
+  <li>떠나보내야 할 수도, 하지만 추천</li>
+</ul>
+
+<h3 id="q-infra-as-code-과-엔터프라이즈">Q. Infra as Code 과 엔터프라이즈</h3>
+<ul>
+  <li>도입시 롤에 대한 정의를 필요로함</li>
+  <li>하고싶은 내부 인력을 교육시키는 1안</li>
+  <li>외부의 잘하는 DevOps 엔지니어를 영입하는 2안</li>
+</ul>
+
+<h3 id="컨테이너-선진국의-경우">컨테이너 선진국의 경우…</h3>
+<ul>
+  <li>컨테이너 기술보다는 그위의 서비스에 관심</li>
+  <li>기술 비교보다 어떻게 하면 잘 쓸까에 고민</li>
+</ul>
+
+<h3 id="q-k8s-dcos-swarm-rancher-누가남을까">Q. K8S, DC/OS, Swarm, Rancher 누가남을까?</h3>
+<ul>
+  <li>K8S가 지금의 승자</li>
+  <li>K8S는 마케팅에 비해 안정화 필요</li>
+  <li>밥줄 유지를 위해서는 솔루션 줄타기를 잘 해야함</li>
+</ul>
+
+<h3 id="q-monitoring과-admin은">Q. Monitoring과 Admin은?</h3>
+<ul>
+  <li>K8S를 직접 도입시 따르는 실패의 원인중 하나</li>
+  <li>직접 만들고 구축하는것이 SaaS나 이미 있는 솔루션을 쓰는것 보다 비효율적</li>
+  <li>수시로 바뀌고 Scale out/in 하는 환경을 자체적인 툴이 따라가지 못함</li>
+</ul>
+
+<h3 id="엔터프라이즈의-고민거리">엔터프라이즈의 고민거리</h3>
+<ul>
+  <li>어떤 서비스를 컨테이너에 올릴까?</li>
+  <li>보안팀과의 딜</li>
+  <li>HA는? DR은?</li>
+  <li>데이터베이스는?</li>
+  <li>어떻게 이모든걸 표준화 하지?</li>
+</ul>
+
+:ET
