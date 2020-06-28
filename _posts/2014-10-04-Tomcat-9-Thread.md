@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 9 톰켓 쓰레드"
+title:  "Tomcat - 09 톰켓 쓰레드"
 search: true
 toc: true
 toc_sticky: true

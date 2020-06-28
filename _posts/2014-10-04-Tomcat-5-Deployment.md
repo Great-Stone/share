@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 5 애플리케이션 배포"
+title:  "Tomcat - 05 애플리케이션 배포"
 search: true
 toc: true
 toc_sticky: true

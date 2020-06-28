@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 4 환경설정"
+title:  "Tomcat - 04 환경설정"
 search: true
 toc: true
 toc_sticky: true

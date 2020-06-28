@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 8 웹서버 연동(mod_jk)"
+title:  "Tomcat - 08 웹서버 연동(mod_jk)"
 search: true
 toc: true
 toc_sticky: true

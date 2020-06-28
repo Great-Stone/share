@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 7 Host"
+title:  "Tomcat - 07 Host"
 search: true
 toc: true
 toc_sticky: true

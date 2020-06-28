@@ -1,5 +1,5 @@
 ---
-title:  "Tomcat - 6 DB 연동"
+title:  "Tomcat - 06 DB 연동"
 search: true
 toc: true
 toc_sticky: true
