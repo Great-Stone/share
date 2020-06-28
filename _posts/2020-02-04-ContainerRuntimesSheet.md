@@ -1,7 +1,8 @@
 ---
 title:  "Container Runtimes 비교 표"
 search: true
-toc: true
+toc: false
+layout: "page"
 toc_sticky: true
 comments: true
 categories: 
