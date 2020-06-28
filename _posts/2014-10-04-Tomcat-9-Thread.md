@@ -93,6 +93,8 @@ HTTP나 AJP 프로토콜이 정의된 `Connector`는 설정되어 있지는 않�
 쓰레드 덤프의 시작에는 쓰레드 이름과 쓰레드의 정보가 기록되며 이후 쓰레드 상태에 대해 설명합니다.
 트레이스의 읽는 순서는 위가 최근 실행한 클래스와 메소드이기 때문에 아래서부터 위로 읽습니다.
 
+![ThreadDump](https://raw.githubusercontent.com/Great-Stone/great-stone.github.io/master/assets/img/Tomcat_youtube/ThreadDump.png)
+
 쓰레드 덤프를 발생시키는 법은 다음과 같습니다.
 
 1. 프로세스 ID를 확인

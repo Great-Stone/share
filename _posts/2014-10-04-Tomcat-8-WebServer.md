@@ -148,6 +148,8 @@ worker.[WORKER_NAME].[TYPE]=[VALUE]
 
 기능의 활성화는 단순히 `server.xml`의 `Cluster` 디스크립터의 주석을 해제하는 것만으로도 가능합니다.
 
+![tomcatCluster.png](https://raw.githubusercontent.com/Great-Stone/great-stone.github.io/master/assets/img/Tomcat_youtube/tomcatCluster.png)
+
 하지만 동일 장비에서 기동되는 톰캣간이나 서비스가 다른 톰캣이 여럿 기동중인 경우에는 설정값들이 중복되어 톰캣 기동이나 서비스 처리시 문제가 발생할 수 있습니다. 따라서 기본적인 설정 값 외에 별도의 설정들을 적용해야 하는 경우 `server.xml`에서 클러스터를 사용하기 위한 디스크립터 위에 설명한 도큐먼트의 내용을 참고해야 합니다.
 
 만약 도큐먼트의 설정들이 너무 많거나 어떻게 적용해야 하는지 이해하기 힘든경우 톰캣 5.5버전의 `server.xml`을 참고하시기 바랍니다. 해당 버전에서는 6.0 이후 단순히 한줄로 적용된 `Cluster` 디스크립터와는 다르게 기본적인 설정과 값이 같이 적용되어 있습니다. 아래 예제는 도큐먼트의 기본 설정에서 가져온 내용입니다.
@@ -210,5 +212,6 @@ worker.[WORKER_NAME].[TYPE]=[VALUE]
 ```
 
 복제 설정이 추가된 어플리케이션이 배치된 톰캣은 기동시 클러스터를 활성화하고 멤버간에 통신을 수행하는 메시지가 로그에 나타납니다.
+![distributable](https://raw.githubusercontent.com/Great-Stone/great-stone.github.io/master/assets/img/Tomcat_youtube/distributeable.png)
 
 구성된 클러스터와 어플리케이션은 LB로 구성되어 요청하며 각 톰캣 프로세스는 세션을 공유하기 때문에 하나의 톰캣 프로세스가 종료되더라도 다른 톰캣 프로세스에서 세션을 받아 수행하는 것을 확인할 수 잇습니다.

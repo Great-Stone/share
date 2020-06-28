@@ -56,7 +56,7 @@ OS 환경에 Java Home을 설정하는 방법은 다음과 같습니다. (Java H
 
 **Windows**
 내컴퓨터 우클릭 > 고급 > 환경변수 > JAVA_HOME 추가
-![JavaHomeOnWindows](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/tomcatService.jpg)
+![JavaHomeOnWindows](https://github.com/Great-Stone/great-stone.github.io/blob/master/assets/img/Tomcat_youtube/JavaHomeOnWindows.png?raw=true)
 
 **Unix/Linux/OSX**
 계정 루트의 `.profile` (bash 쉘의 경우 `.bash_profile`)에 다음을 설정
