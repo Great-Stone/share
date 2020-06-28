@@ -27,7 +27,7 @@ last_modified_at: 2019-05-29T08:06:00-05:00
 
 - 떠나보낸 연인...하지만 사랑한다
 
-  ![](https://github.com/Great-Stone/share/blob/master/assets/img/DevOps_Discussion_1st_001.jpg?raw=true)
+  ![](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/DevOps_Discussion_1st_001.jpg)
 
   
 
