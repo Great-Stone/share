@@ -87,9 +87,9 @@ last_modified_at: 2019-05-29T08:06:00-05:00
     - 상위 프로세스에 문제가 발생하면 컨트롤에서 벗어나는 프로세스가 발생합니다.
     - 컨테이너 환경으로 인해 보안 취약성이 발생할 수 있습니다.
     - 모든 Docker 작업은 동일한 전체 루트 권한을 가진 사용자 (또는 사용자)가 수행해야했습니다.
-      ![Docker Work - Docker](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig1.png)
+      ![Docker Work - Docker](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/fig1.png?token=ADUAZXMRZBQ7Q6Q772NUGM267EUX6)
 
   - Podman
     - [Podman site](https://podman.io/blogs/)
     - Podman 방식은 이미지 레지스트리, 컨테이너 및 이미지 저장소, runC 컨테이너 런타임 프로세스 (no Daemon)를 통해 Linux 커널과 직접 상호 작용하는 것입니다.
-      ![Podman Work - Podman](https://developers.redhat.com/blog/wp-content/uploads/2019/02/fig2.png)
+      ![Podman Work - Podman](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/fig2.png?token=ADUAZXNCUZKLTZ7SME2H5BC67EUYQ)

@@ -108,7 +108,7 @@ worker.[WORKER_NAME].[TYPE]=[VALUE]
 - worker.loadbalancer.balance_workers=[WORKER_NAME] : lb 형태인 loadbalancer 워커에서 요청을 분산시킬 워커를 나열합니다.
 
 `worker.properties`의 설정 예제는 다음과 같습니다.
-![workersproperties](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/workerproperties.jpg)
+![workersproperties](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/workerproperties.jpg?token=ADUAZXKQI5JMPI7G5L7PVNS67EUS4)
 
 해당 설정은 LB로 구성되는 워커를 정의합니다. LB로 구성될 `worker1`과 `worker2`를 정의합니다.
 

@@ -101,7 +101,7 @@ worker.status.type=status
 
 '[ip:port/jkstatus](http://tomcat.apache.org/connectors-doc/reference/status.html)'
 
-![jkstatus](https://github.com/Great-Stone/great-stone.github.io/blob/master/assets/img/Tomcat_youtube/jkstatus.png?raw=true)
+![jkstatus](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/jkstatus.png?token=ADUAZXOQFPMD3J65EB7NTBC67EUVU)
 
 jkstatus로 확인할 수 있는 정보는 다음과 같습니다.
 
@@ -182,7 +182,7 @@ http://www.oracle.com/technetwork/java/javase/2col/jmc-relnotes-2004763.html
 JMC(Java Mision control)은 bea사에서 만든 별도의 JDK인 JRockit에서 제공하던 모니터링 툴입니다. 현재는 bea가 오라클사에서 인수하면서 관련 소프트웨어도 오라클이 관리하고 있으며 관련하여 Sun사도 인수하면서 기존 Sun Hotspot JDK와 JRockit의 장점을 합친 결과로 여러 기능이 추가되고 있습니다. 특히 JDK 7에서 많은 변화가 있었으며 여기에 JMC가 포함되었습니다.
 
 JDK 7 이상의 버전에서 "$JAVA_HOME/bin/jmc"로 실행시키며, 수행된 툴은 다음과 같은 모습을 갖고 있습니다.
-![jmc](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/jmc.png)
+![jmc](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/jmc.png?token=ADUAZXOHGPY4RMTZNBFBJYK67EUUS)
 
 visualVM과 거의 비슷한 정도의 모니터링 기능을 제공하는 JMC의 대표적인 특징은 GC 정책에 따른 모니터링 탭의 변화 입니다. GC 정책은 기본 Parellel GC외에도 필요에 따라 CMS(Concurrent Mark Sweep)이나 G1 정책이 사용될 수 있는데 이런 GC 정책에 따른 뷰가 변경됨이 큰 특징입니다.
 

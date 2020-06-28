@@ -34,7 +34,7 @@ last_modified_at: 2014-10-04T02:21:00-05:00
 
 두번째로는 아마도 무료로 사용할 수 있다는 점이 톰캣을 사용하게 되는 이유일 것입니다. 수많은 벤더사에서 JSP/Servlet 엔진과 추가로 Java Enterprise 기능을 사용할 수 있는 세련되고 검증된 자신만의 제품을 개발하고 상용화 하고 있습니다. 하지만 이러한 제품은 비용이 추가된다는 (큰)고민이 생깁니다. 물론 유지보수 계약을 통해 기술지원과 더불어 든든한 책임전가의 대상(?)인 벤더사가 존재한다는 장점이 있지만 모든 사용자가 이런 비용을 지불할 수 있는것은 아니겠지요.
 
-![rebellabs:App Server Most of Used](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/app-server-used-most-often-graph.jpg)
+![rebellabs:App Server Most of Used](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/app-server-used-most-often-graph.jpg?token=ADUAZXKGEU5LVPPWSH3R4YK67EUKK)
 
 
 Java 웹 어플리케이션을 실행하는 Application Server의 종류는 거의 30가지에 달하나 조사된 통계에 따르면 반정도를 Tomcat이 점유하고 있다고 합니다. 여러가지 이유가 더 있겠지만 앞서 언급한 많은 레퍼런스와 무료라는 큰 특징으로 인해 수많은 사용자가 톰캣을 사용하고 있습니다.
@@ -62,7 +62,7 @@ Java 웹 어플리케이션을 실행하는 Application Server의 종류는 거�
 ### 1.3 톰캣 구성 요소
 톰캣을 구성하는 핵심적인 요소는 다음의 세가지 컴포넌트입니다.
 
-![Tomcat_Component](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/tomcat_component_do.jpg)
+![Tomcat_Component](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/tomcat_component_do.jpg?token=ADUAZXMO7ZXOL64TU2WHS7267EULI)
 
 Catalina는 아마도 톰캣을 사용하면 가장 많이 보게되는 단어 중 하나일 것입니다.
 
@@ -105,6 +105,6 @@ The TomEE Plusdistribution adds the followings
 
 부가적인 설명을 드리자면 JDK 버전과 Java Enterprise 버전은 서로 범위가 다릅니다. Java Standard기능은 JDK 버전과 같지만 Java Enterprise 기능은 JDK 버전과는 별개로 WAS에서 지원하는 컴포넌트의 요소에 따라 그 버전을 달리 합니다. 앞서 대표적인 국내 프레임워크로 Spring 프레임워크를 사용하는 전자정부 프레임워크를 예로 들었지만 국내와는 달리 국외 통계를 본다면 Java Enterprise의 사용은 그리 생소하지 않습니다.
 
-![JavaUsed](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/JavaUsed.jpg)
+![JavaUsed](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/JavaUsed.jpg?token=ADUAZXMDSSXWUISLMHKRGZK67EUMY)
 
 따라서 Java Enterprise 환경을 고려한다면 톰캣을 기반으로 한 TomEE를 활용하는 방법도 톰캣에 익숙한 개발자들에게는 도움이 될 수 있겠습니다.

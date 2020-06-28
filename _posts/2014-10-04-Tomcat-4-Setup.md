@@ -74,7 +74,7 @@ Java의 장점이 무엇인가 물으면 그 대표적인 한가지는 OS 플랫
 
 톰캣에서 Java Options의 추가를 위해서는 스크립트에 추가하는 방법과 Windows 서비스에 등록된 경우 관련 설정창에 추가하는 방법이 있습니다.
 
-![TomcatServiceOptions](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/tomcatService-20200628205826895.jpg)
+![TomcatServiceOptions](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/tomcatService-20200628205826895.jpg?token=ADUAZXKZXYIDH75QYMNK75267EUOU)
 (서비스로 등록된 톰캣에 Java Options 적용 예)
 
 ### 4.3 ClassLoader

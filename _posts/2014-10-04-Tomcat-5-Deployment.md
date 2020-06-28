@@ -223,7 +223,7 @@ jsp 서블릿에서는 두가지 경우에 대해 jsp의 업데이트를 수행�
 
 어플리케이션의 클래스가 수정되어 리로드가 발생하거나 라이브러리나 xml등의 재기동 후 반영되는 변경사항을 적용하기 위해서는 톰캣을 재기동해야 하는 상황이 발생합니다. 이런 경우 기존 어플리케이션은 기존에 사용중인 사용자가 계속 이용 할 수 있도록 활성화된 상태에서 새로운 버전의 어플리케이션을 배치, 새로운 사용자는 새로운 어플리케이션을~~(새술은 새부대에?)~~ 사용하도록 하는 'Parallel Deployment'기능을 사용 할 수 있습니다.
 
-![parallelDeploy](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/appVersion.jpg)
+![parallelDeploy](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/appVersion.jpg?token=ADUAZXOCLTBA3NROCYL7SF267EUQK)
 
 WebLogic Server에서도 이와 유사한 '[production redeployment](http://docs.oracle.com/middleware/1212/wls/DEPGD/redeploy.htm#DEPGD266)'기능이 있지만 톰캣이 좀더 쉬운 방법을 제안합니다.
 

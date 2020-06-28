@@ -52,7 +52,7 @@ last_modified_at: 2014-10-04T02:21:07-05:00
 
 호스트의 기능은 주로 웹서버에서 많이 사용되는 기능입니다. 특정 url로 호출되는 요청을 각 요청 전달 목적지에 맞게 분배하는 역할을 수행하지요. 호스트는 톰캣에도 구현되어 있으며 이를 통해 하나의 톰캣 내에서 같은 컨텍스트를 갖는 요청의 처리가 가능합니다.
 
-![hostRoot](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/hostRoot.jpg)
+![hostRoot](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/hostRoot.jpg?token=ADUAZXPZNGFNIR7Z4S5S6MK67EUR6)
 
 톰캣의 프로세스를 서비스 마다 생성하지 못하는 상황(e.g. 자원의 한계와 같은) 또는 서비스에서 소모하는 자원이 크지 않아 추가적인 프로세스를 기동하지 않아도 되는 상황 등 호스트의 기능을 활용 할수 있습니다.
 
@@ -82,6 +82,6 @@ last_modified_at: 2014-10-04T02:21:07-05:00
 
 - 톰캣 재기동 후 다시 로그인 페이지 호출하여 설정한 user/passwd 입력 후 로그인
 
-![hostManager](../../../Library/Mobile Documents/com~apple~CloudDocs/Markup/images/hostManager.jpg)
+![hostManager](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/hostManager.jpg?token=ADUAZXORX3KILKKDCM4YLOK67EUSE)
 
 `host manager`에서는 기본 호스트 외에 추가적인 호스트에 대한 추가를 할 수 있도록 `Add Virtual Host`를 사용할 수 있습니다. `Host` 디스크립터에서 정의되는 내용을 각 항목에 맞게 입력 할 수 있고 이렇게 추가된 호스트는 `Host name` 테이블의 `commands`에서 개별적으로 시작과 정지가 가능합니다. 호스트가 정지되어 비활성화 된 상태에서는 해당 호스트의 요청 url에 맞게 들어오더라도 기본 호스트가 처리하게 됩니다. `host manager`는 웹페이지를 통한 호스트의 추가/삭제/컨트롤이 가능하므로 외부, 또는 관리자가 아닌 사용자가 접근하지 못하도록 해야 합니다.
