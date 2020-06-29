@@ -1,7 +1,7 @@
 ---
 title:  "OpenShift 3.x - 프로젝트 별로 특정 노드에 배포하기"
 search: true
-toc: true
+toc: false
 toc_sticky: true
 comments: true
 categories: 
@@ -9,7 +9,7 @@ categories:
   - OpenShift3.x
 last_modified_at: 2020-02-03T08:06:00-05:00
 ---
-https://blog.openshift.com/deploying-applications-to-specific-nodes/
+> 원문 : [https://blog.openshift.com/deploying-applications-to-specific-nodes/](https://blog.openshift.com/deploying-applications-to-specific-nodes/)
 
 Deployment나 Deployment Config에서 Nodeselect를 지정하는 방법 외에 Project 단위로 설정하는 방법을 설명합니다.
 
@@ -25,7 +25,7 @@ Deployment나 Deployment Config에서 Nodeselect를 지정하는 방법 외에 P
 
 2. Node에 Label 업데이트
 
-   > https://docs.openshift.com/container-platform/3.7/admin_guide/manage_nodes.html#updating-labels-on-nodes
+   > Label 업데이트 ([링크](https://docs.openshift.com/container-platform/3.7/admin_guide/manage_nodes.html#updating-labels-on-nodes))
 
    ```bash
    ~$ oc label node [노드이름] region=primary
