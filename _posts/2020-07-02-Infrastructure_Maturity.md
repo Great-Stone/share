@@ -10,7 +10,7 @@ categories:
   - Terraform
 ---
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HB3LMVLNi_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 이번에는 인프라의 변화와 적응이라는 제목으로 인프라의 성숙도와 관련한 이야기를 나누고자 합니다.
 
