@@ -26,15 +26,12 @@ Terraform에서는 당연히 동작해야하는 필연적 기능이기 때문에
 
 ---
 
-**지원 대상**
-
-✔︎ OSS
-
-✔︎ Cloud
-
-✔︎ Cloud for Biz
-
-✔︎ Enterprise
+| 유형                                 | 지원여부 |
+| ------------------------------------ | -------- |
+| Terraform OSS (Open Source Software) | ✔︎        |
+| Terraform Cloud                      | ✔︎        |
+| Terraform Cloud for Business         | ✔︎        |
+| Terraform Enterprise                 | ✔︎        |
 
 ---
 
