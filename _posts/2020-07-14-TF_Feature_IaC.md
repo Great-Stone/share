@@ -16,11 +16,11 @@ Terraform의 가장 주요한 기능으로 Infrastructure as Code 를 이야기 
 
 
 
-> Terraform | Features
+[ Terraform | Features ]
 
 # Infrastructure as Code : HCL
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pSPZQdpWWjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Terraform에서는 당연히 동작해야하는 필연적 기능이기 때문에 오픈소스를 포함하여 모든 유형의 Terraform에서 제공되는 기능입니다.
 
