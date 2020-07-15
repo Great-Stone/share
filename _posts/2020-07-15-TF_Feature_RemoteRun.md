@@ -46,7 +46,7 @@ Enterprise에서는 수행의 주체가 중앙 서버이며, 등록된 VCS나 Te
 
 워크스페이스는 VCS와 연동하는 것이 일반적이며, 이 경우 VCS에 Pull이 발생하면 이를 감지하여 해당 워크스페이스의 Run이 수행되는 케이스 입니다.
 
-![Version Control](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/Version%20Control%20|%20Version%20Control%20|%20great-stone%20|%20Terraform%20Cloud%202020-07-15%2023-01-23.png)
+![Terraform Cloud 2020-07-15 23-01-23](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/Terraform%20Cloud%202020-07-15%2023-01-23.png)
 
 VCS에 Pull이 발생하는 것은 최종적으로 검증된 코드가 올라왔다고 판단되어 동작하며, 특정 파일이나 경로에 관련 동작이 발생했을 경우에만 Run이 수행되도록 설정 가능합니다.
 
