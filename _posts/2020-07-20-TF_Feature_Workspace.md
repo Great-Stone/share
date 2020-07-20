@@ -68,11 +68,7 @@ Terraform은 실행시 `.tf` 확장자의 파일은 모두 읽어들이고 `Grap
 
 
 
-## Terraform Cloud / Enterprise 사용의 예
-
-
-
-## Terraform Cloud / Enterprise 사용의 예
+## Terraform Cloud / Enterprise 에서의 Workspace
 
 Terraform Cloud와 Terraform Enterprise에서는 워크스페이스를 웹 UI를 통해 관리하게 됩니다. Terraform의 실행 주체가 로컬 환경이 아닌 리모트 환경이기 때문에 중앙에서 프로비저닝을 위한 워크스페이스를 관리하고 VCS와 연동합니다. 각 워크스페이스 마다 RBAC 적용이나 워크스페이스 트리거링 같은 조직에서 필요한 기능들이 추가됩니다.
 
