@@ -41,7 +41,7 @@ Remote State, 즉 원격으로 워크스페이스의 상태 정보를 읽을 수
 
 ## `terraform_remote_state` datasource
 
-공식 가이드에 따르면 Remote State는 `terraform_remote_state` 데이터소스를 통해 상태 값을 가져오게 됩니다. (https://www.terraform.io/docs/providers/terraform/d/remote_state.html)
+공식 가이드에 따르면 Remote State는 `terraform_remote_state` 데이터소스를 통해 상태 값을 가져오게 됩니다. [Remote State 가이드 보기](https://www.terraform.io/docs/providers/terraform/d/remote_state.html)
 
 설정에 대한 예시와 항목에 대한 설명은 다음과 같습니다.
 
