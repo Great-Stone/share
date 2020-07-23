@@ -17,6 +17,8 @@ Terraform을 수행하고나면 실행되고난 뒤의 상태가 저장됩니다
 
 # Collaboration : Remote State
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4b7IZAXzha8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Remote State, 즉 원격으로 워크스페이스의 상태 정보를 읽을 수 있다는 의미는 각 팀이 갖는 워크스페이스의 결과를 다른 팀에 노출시켜 새로 프로비저닝 된 정보를 바탕으로 다른 작업을 수행할 수 있도록 합니다. 해당 기능은 오픈소스 환경에서는 지원되지 않습니다.
 
 ---
@@ -36,6 +38,8 @@ Remote State, 즉 원격으로 워크스페이스의 상태 정보를 읽을 수
 - VM 배포 워크스페이스 : 네트워크 작업이 완료된 상태 값을 기반으로 EC2 인스턴스를 프로비저닝
 
 읽어야할 상태를 생성하는 도중에 이를 참조하는 다른 워크스페이스가 실행된다면? 이 경우 참조할 대상의 State는 잠긴 상태가 되기 때문에 해당 작업이 완료될 때까지 이를 바라보는 워크스페이스는 대기하게 됩니다.
+
+워크스페이스가 인프라별, 혹은 프로비저닝 대상으로 인해 세분화 되는 경우에도 각 상태의 변화를 다른 워크스페이스에서 원격으로 불러옴으로서 종속적인 변경사항을 적용한 포스트 프로비저닝 프로세스가 가능하도록 하는 기능입니다.
 
 
 
@@ -108,7 +112,7 @@ resource "aws_instance" "foo" {
 
   `outputs`의 `random_server_id` 값을 가져오고자 하면
 
-  ```
+  ```javascript
   data.terraform_remote_state.<id>.outputs.random_server_id
   ```
 
@@ -119,4 +123,3 @@ resource "aws_instance" "foo" {
 ## 마치며
 
 Remote State는 타 워크스페이스에서 동작한 상태 값을 기반으로 관련 데이터에 종속성이 있는 작업을 수행하기에 필요한 데이터를 제공받을 수 있는 기능입니다. 워크플로우를 정의할 때 각 팀간, 혹은 각 프로비저닝을 담당하는 주체가 서로 약속한 데이터를 주고 받을 수 있도록 코드로 정의할 수 있는 IaC의 협업 기능으로 활용 가능합니다.
-
