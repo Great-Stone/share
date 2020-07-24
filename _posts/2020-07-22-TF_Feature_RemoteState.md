@@ -25,7 +25,7 @@ Remote State, 즉 원격으로 워크스페이스의 상태 정보를 읽을 수
 
 | 유형                                 | 지원여부 |
 | ------------------------------------ | -------- |
-| Terraform OSS (Open Source Software) |          |
+| Terraform OSS (Open Source Software) | •        |
 | Terraform Cloud                      | ✔︎        |
 | Terraform Cloud for Business         | ✔︎        |
 | Terraform Enterprise                 | ✔︎        |
