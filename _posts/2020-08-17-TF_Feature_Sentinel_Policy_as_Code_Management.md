@@ -17,7 +17,7 @@ Terraform은 인프라의 코드화 측면에서 그 기능을 충실히 실현�
 
 # Governance & Policy : Sentinel
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4b7IZAXzha8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QQ2SnWmSbjE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Infrastructure as Code를 구현하면 이전보다 빠른 프로비저닝이 가능합니다. 하지만, 여기에 팀웍과 조직 내 거버넌스를 유지하기 위해 또다른 도구나 무언가가 필요하다면? 관리를 위한 관리, 도구를 위한 도구들이 필요하게 될 것입니다. 그래서 테라폼의 클라우드 버전 부터는 팀이나 조직의 정책을 코드로 관리하여 자산화 시킬 수 있는 도구를 제공합니다.
 
