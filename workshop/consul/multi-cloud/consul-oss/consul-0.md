@@ -1,13 +1,13 @@
 name: Consul-OSS-Workshop
-class: title
+class: Korea, APAC
 count: false
 ![:scale 30%](images/consul_logo.svg)
 .titletext[
 Consul OSS Workshop]
-Connect and Secure Services across any platform.
+모든 플랫폼상의 서비스를 안전하게 연결
 
 ???
-Welcome to the beginner's guide to Consul OSS. This slide deck and accompanying labs can be presented as an instructor-led or self-guided workshop. If you're presenting this workshop be sure to read through all the speaker notes and the associated Instruqt tracks. This content is suitable for a 3-4 hour workshop.
+Consul OSS 초보자 가이드에 오신 것을 환영합니다. 이 슬라이드덱과 함께 제공되는 실습은 강사 주도식 또는 자가지도식 워크샵으로 제공 될 수 있습니다. 이 콘텐츠는 3-4 시간이 소요됩니다.
 
 ---
 name: Link-to-Slide-Deck
@@ -25,13 +25,13 @@ These slides are published using the RemarkJS framework and Github Pages. View t
 
 ---
 name: Introductions
-Introductions
+강사 소개
 -------------------------
 
 .contents[
-* Your Name
-* Job Title
-* Automation Experience
+* GS, 이규석
+* Sr. Solutions Engineer
+* gs@hashicorp.com
 ]
 
 ???
@@ -39,7 +39,7 @@ Use this slide to introduce yourself, give a little bit of your background story
 
 ---
 name: Table-of-Contents
-Table of Contents
+목차
 =========================
 
 1. Consul Overview
