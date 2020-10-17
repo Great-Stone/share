@@ -44,8 +44,7 @@ Consensus - Consistency Modes
 
 내부적으로 Consensus를 이해할 필요는 없지만 워크로드에 맞게 최적화 할 수 있도록 다양한 일관성관련 모드를 이해해야합니다.
 
-* **Default** - Raft makes use of leader leasing, providing a time window in which the leader assumes its role is stable. However, if the old leader services any reads, the values are potentially stale. We make this trade-off because reads are fast, usually strongly consistent, and only stale in a hard-to-trigger situation.
-Raft는 리더 leas time을 사용하여 리더가 자신의 역할이 안정적이라고 가정하는 시간을 제공합니다. 읽기 작업에 성능이 요구되는, 일반적으로 강력하고 일관성이 있으며 트리거하기 어려운 상황에서만 부실하기 때문에 이러한 절충안을 만듭니다.
+* **Default** - Raft는 리더 leas time을 사용하여 리더가 자신의 역할이 안정적이라고 가정하는 시간을 제공합니다. 읽기 작업에 성능이 요구되는, 일반적으로 강력하고 일관성이 있으며 트리거하기 어려운 상황에서만 부실하기 때문에 이러한 절충안을 만듭니다.
 
 * **Consistent** - 아주 강한 일관성을 유지하기 위한 모드입니다. 항상 일관되게 동작하지만 추가 일관성 확인을 위한 작업으로 지연시간이 증가합니다.
 
