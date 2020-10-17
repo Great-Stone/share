@@ -11,8 +11,8 @@ Service Segmentation - Intro
 .center[![:scale 100%](images/consul_segmentation_intro.png)]
 
 * Service naming
-* Segmentation
-* Authorization
+* 분할(Segmentation)
+* 인가(Authorization)
 * Routing
 
 ???
@@ -47,9 +47,9 @@ Service Mesh Architecture - Control Plane
 -------------------------
 .center[![:scale 100%](images/connect_control_plane.png)]
 
-* Single source of truth
-* Manage node services
-* Manage access
+* 신뢰할 수 있는 단일 소스
+* 노드의 서비스 관리
+* 접근 관리
 
 ???
 The Control Plane is responsible for configuring the data plane. It's responsible for features like network policy enforcement and providing service discovery data to the data plane. It is designed to be highly scalable by not making direct decisions on traffic by sending instructions to the data plane only when something changes.   This leverages capabilities such as long polling and integrated K/V that have been part of Consul since the beginning.
@@ -67,9 +67,9 @@ Service Mesh Architecture - Data Plane
 -------------------------
 .center[![:scale 100%](images/connect_control_plane.png)]
 
-* Manage application requests
-* High throughput, low latency
-* Advanced Layer 7 features
+* 애플리케이션 요청 관리
+* 높은 처리량, 낮은 지연시간
+* 고급 L7 기능
 
 ???
 The Data Plane provides the ability to forward requests from the applications, including more sophisticated features like health checking, load balancing, circuit breaking, authentication, and authorization.
@@ -87,10 +87,10 @@ Service Mesh - Identity
 -------------------------
 .center[![:scale 100%](images/connect_certificate_service_identity.png)]
 
-* Provide service identity
-* Encryption of all traffic
-* Standard TLS certificate with SPIFFE compatibility
-* Built-in certificate authority (CA) or integrated with 3rd party CA, such as Vault
+* 서비스 아이덴티티 제공
+* 모든 트래픽의 암호화
+* SPIFFE와 호환되는 TLS 인증서
+* 내장된 CA, 또는 Vault와 같은 외부 CA 연동
 
 ???
 Consul provides each service with an identity encoded as a SPIFFE-compatible TLS certificate. This way, all traffic between services is encrypted. You can use either the build-in certificate authority, or you can use Vault's CA.
@@ -103,11 +103,11 @@ Service Mesh - Service Access Graph
 -------------------------
 .center[![:scale 100%](images/service_access_graph.png)]
 
-* Logical service name (not IP)
-* Scales independent of instances
-* Consistency insured with Raft
-* Manage with web UI, CLI, and API
-* Multi-datacenter support
+* 논리적인 서비스 이름(IP > FQDN)
+* 인스턴스와 독립적으로 확장
+* Raft로 일관성 보장
+* 웹 UI, CLI, API로 관리
+* 멀티 데이터센터 지원
 
 ???
 With each service having its own identity, we're able to allow or deny service-to-service communication with Intentions. Intentions follow the same concept as firewall rules, where you grant or deny access based on source and destination. Except we're not specifying IPs or IP ranges. Instead, we're specifying service names and letting Consul deal with the underlying networking.
@@ -122,9 +122,9 @@ Service Mesh - Advanced Routing
 -------------------------
 .center[![:scale 100%](images/consul_L7_routing.png)]
 
-* Canary testing
-* A/B tests
-* Blue/Green deploys
+* 카나리 테스트
+* A/B 테스트
+* Blue/Green 배포
 
 ???
 Layer 7 traffic management allows operators to divide L7 traffic between different subsets of service instances when using Connect.
@@ -139,9 +139,9 @@ Service Mesh - Mesh Gateways
 -------------------------
 .center[![:scale 80%](images/connect_mesh_gateways.png)]
 
-* Route Connect traffic between clusters
-* Overcome interconnectivity issues
-* Encryption remains intact
+* 클러스터 간 라우팅 연결
+* 멀티 클러스터 상호 연결을 위한 과제 극복
+* 암호화는 그대로 유지
 
 ???
 Mesh gateways enable routing of Connect traffic between different Consul datacenters:
@@ -154,28 +154,28 @@ Mesh gateways enable routing of Connect traffic between different Consul datacen
 name: Segmentation-Lab
 # 👩‍💻 Lab Exercise: Service Segmentation
 .blocklist[
-You will accomplish the following in this lab:
+이 실습에서는 다음을 수행합니다.:
 
-* Deploy a Sidecar
-* Learn about the Envoy Proxy
-* Deploy and configure a Proxy
-* Use Consul to connect and secure traffic
+* 사이드가 배포
+* Envoy Proxy에 대해 배우기
+* Proxy에 대한 배포와 설정
+* Consul을 활용한 트래픽 연결과 보안
 ]
 
-Your instructor will provide the URL for the lab environment.
+https://play.instruqt.com/hashicorp/tracks/service-mesh-with-consul
 ---
 name: Segmentation-Lab-K8s
 # 👩‍💻 Bonus Lab: Service Segmentation - K8s
 .blocklist[
 You will accomplish the following in this lab:
 
-* Deploy Connect on K8s
-* Connect a microservice
-* Scale your application
-* Observe application performance
+* K8에 Connect 배포
+* 마이크로 서비스 연결
+* 애플리케이션 확장
+* 애플리케이션 성능 관찰
 ]
 
-Your instructor will provide the URL for the lab environment.
+https://play.instruqt.com/hashicorp/tracks/service-mesh-with-consul-k8s
 
 ---
 name: Segmentation-Lab-Hybrid
@@ -183,9 +183,9 @@ name: Segmentation-Lab-Hybrid
 .blocklist[
 You will accomplish the following in this lab:
 
-* Deploy Connect on K8s and VMs
-* Connect two datacenters over a WAN
-* Use Mesh Gateways to solve for multi-datacenter network complexities
+* K8 및 VM에 Connect 배포
+* WAN을 통해 두 개의 데이터 센터 연결
+* 메시 게이트웨이를 사용하여 다중 데이터 센터 네트워크 복잡성 해결
 ]
 
-Your instructor will provide the URL for the lab environment.
+https://play.instruqt.com/hashicorp/tracks/service-mesh-with-consul-hybrid

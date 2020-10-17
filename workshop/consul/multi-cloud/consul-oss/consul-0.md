@@ -54,6 +54,8 @@ name: Table-of-Contents
     * Bonus Lab - Service Mesh with Consul on K8s
     * Bonus Lab - Service Mesh with Consul Mesh Gateways
 
+Lab : https://play.instruqt.com/hashicorp/topics/consul-workshops
+
 ???
 For today's session we are going to be covering the following topics.  
 We are going to do an overview of why you even need consul.  Then we will go over how consul works from an architecture perspective.  We will then dive into some of the use cases that you would use consul for.  After that we will get our hands dirty with some labs starting with getting comfortable interacting with consul, then moving to service discovery and finally looking at consul connect and service segmentation.  Any questions?  Ok lets go!!

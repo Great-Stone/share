@@ -10,11 +10,11 @@ Service Discovery - Intro
 -------------------------
 .center[![:scale 100%](images/service_registration_catalog.png)]
 
-* DNS and API Interfaces
-* Health checks
-* Load balancer integrations
+* DNS 및 API 인터페이스
+* 상태 체크
+* Load Balancer 통합
 * Kubernetes
-* Multi-cloud, multi-DC
+* 다중 클라우드, 다중 DC
 
 ???
 The starting point for networking with Consul is the service registry. This integrates health checks and provides DNS and API interfaces to enable any service to discover and be discovered by other services.
@@ -43,11 +43,11 @@ Service Discovery - Clients
 -------------------------
 .center[![:scale 100%](images/consul_health_checks.png)]
 
-* Clients check local services
-* Node health checked via gossip
-* Only state changes sent to servers
-* Service discovery filters on health
-* Check types - HTTP, TCP, scripts, etc.
+* 클라이언트는 로컬의 서비스를 확인
+* Gossip을 통해 노드 상태 확인
+* 상태 변경에 대한 정보 만 서버로 전송
+* 상태에 대한 서비스 검색 필터
+* 확인 유형 - HTTP, TCP, Script 등
 
 ???
 Each Consul agent maintains its own set of service registrations and health checks to include overall node health. The agents are responsible for executing their own health checks and updating their local state.
@@ -100,9 +100,9 @@ Integrations - Consul Template
 -------------------------
 .center[![:scale 100%](images/consul_template_example.png)]
 
-* Integrate without code changes
-* Dynamic configurations
-* Manage load balancer configs
+* 코드 변경없이 통합
+* 동적 구성
+* Load Balancer 구성 관리
 
 ???
 Rolling out service discovery doesn't need to be complicated. Consul Template is a standalone application that populates values from Consul and dynamically renders updates to any third party configuration files.
@@ -120,7 +120,7 @@ Integrations - DNS
 
 * Zero-touch
 * Round robin load balancing
-* Unhealthy instances are automatically filtered out
+* 비정상 인스턴스의 자동 필터링
 
 ???
 Using DNS is a simple way to integrate Consul into an existing infrastructure without any high-touch integration.
@@ -152,7 +152,7 @@ Example - Native Consul Integration with F5 BIG-IP
 -------------------------
 .center[![:scale 100%](images/f5_consul_integration.png)]
 
-The F5 BIG-IP AS3 service discovery integration with Consul queries Consul's catalog on a regular, configurable basis to get updates about changes for a given service, and adjusts the node pools dynamically without operator intervention.
+F5 BIG-IP AS3 서비스 검색 통합은 큰 변경없이 구성 가능하며, Consul의 카탈로그를 쿼리하여 주어진 서비스의 변경 사항에 대한 업데이트를 가져오기 때문에 별도의 운영자 개입없이 동적으로 노드 풀을 조정합니다.
 
 .center[
 <a href="https://www.hashicorp.com/resources/zero-touch-application-delivery-with-f5-big-ip-terraform-and-consul" target=_blank>HashiCorp F5 Consul Webinar</a>
@@ -173,13 +173,13 @@ We've been working tirelessly with our partners to provide solid and reliable in
 name: Service-Discovery-Lab
 # 👩‍💻 Lab Exercise: Service Discovery
 .blocklist[
-You will accomplish the following in this lab:
+이 실습에서는 다음을 수행합니다.:
 
-* Service Registration
+* 서비스 등록
 * Health Checks
 * Service Discovery
 * Automated Config Management
 * Seamless DNS integration
 ]
 
-Your instructor will provide the URL for the lab environment.
+(강사가 실습 환경을 위한 URL을 제공합니다.)
