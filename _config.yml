@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "GS"
   avatar           : "/assets/img/tiger.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "So... NEXT!"
+  bio              : "그림같이 써라. 그러면 기억 속에 머물 것이다."
   location         : "S.Korea"
   email            :
   links:
@@ -110,7 +110,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/hahohh/"
+      # url: "https://facebook.com/hahohh/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url: "https://github.com/"
