@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "GS"
   avatar           : "/assets/img/tiger.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "그림같이 써라.\n그러면 기억 속에 머물 것이다.\n- 조지프 퓰리처"
+  bio              : "그림같이 써라.그러면 기억 속에 머물 것이다. - 조지프 퓰리처"
   location         : "S.Korea"
   email            :
   links:
