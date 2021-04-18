@@ -1,8 +1,8 @@
 ---
 title:  "Collaboration : Remote Runs - Terraform Features"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories: 
   - HashiCorp

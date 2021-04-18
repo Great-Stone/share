@@ -1,8 +1,8 @@
 ---
 title:  ".Net(dotNet) core & OpenShift"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories: 
   - OpenShift

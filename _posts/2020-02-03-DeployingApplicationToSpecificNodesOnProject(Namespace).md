@@ -1,8 +1,8 @@
 ---
 title:  "OpenShift 3.x - 프로젝트 별로 특정 노드에 배포하기"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories: 
   - OpenShift

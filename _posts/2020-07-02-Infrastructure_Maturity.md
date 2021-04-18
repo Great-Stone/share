@@ -1,9 +1,9 @@
 ---
 title:  "인프라의 변화와 적응"
 search: true
-toc: false
+toc: true
 excerpt_seperator:  <!--break-->
-toc_sticky: false
+toc_sticky: true
 comments: true
 categories: 
   - HashiCorp

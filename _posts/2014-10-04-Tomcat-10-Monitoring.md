@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 10 톰켓 모니터링"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories:
   - Tomcat

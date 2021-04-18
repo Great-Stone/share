@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 08 웹서버 연동(mod_jk)"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories:
   - Tomcat

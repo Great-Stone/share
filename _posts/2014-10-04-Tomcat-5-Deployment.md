@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 05 애플리케이션 배포"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories:
   - Tomcat

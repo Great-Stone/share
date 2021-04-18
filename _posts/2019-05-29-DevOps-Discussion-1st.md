@@ -1,8 +1,8 @@
 ---
 title:  "DevOps 연구소 좌담회 - 1차"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories: 
   - DevOps

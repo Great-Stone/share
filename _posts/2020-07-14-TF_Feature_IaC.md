@@ -1,9 +1,9 @@
 ---
 title:  "Infrastructure as Code : HCL - Terraform Features"
 search: true
-toc: false
+toc: true
 excerpt_seperator:  <!--break-->
-toc_sticky: false
+toc_sticky: true
 comments: true
 categories: 
   - HashiCorp

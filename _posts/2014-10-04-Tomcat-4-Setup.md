@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 04 환경설정"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories:
   - Tomcat

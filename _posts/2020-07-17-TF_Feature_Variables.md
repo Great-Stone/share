@@ -1,8 +1,8 @@
 ---
 title:  "Infrastructure as Code : Variables - Terraform Features"
 search: true
-toc: false
-toc_sticky: false
+toc: true
+toc_sticky: true
 comments: true
 categories: 
   - HashiCorp
