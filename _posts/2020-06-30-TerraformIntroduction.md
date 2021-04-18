@@ -1,8 +1,8 @@
 ---
 title:  "Terraform 개념 소개"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories: 
   - HashiCorp

@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 06 DB 연동"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories:
   - Tomcat

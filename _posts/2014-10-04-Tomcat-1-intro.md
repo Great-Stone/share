@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 01 소개"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories: 
   - Tomcat

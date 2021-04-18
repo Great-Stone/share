@@ -1,8 +1,8 @@
 ---
 title:  "Consul Mesh Gateway for Hybrid Cloud - K8S x VMs(BMs)"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories: 
   - HashiCorp

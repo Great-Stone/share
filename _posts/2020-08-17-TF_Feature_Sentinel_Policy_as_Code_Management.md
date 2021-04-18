@@ -1,8 +1,8 @@
 ---
 title:  "Governance & Policy : Policy as Code"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories: 
   - HashiCorp

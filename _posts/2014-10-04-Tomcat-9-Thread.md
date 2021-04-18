@@ -1,8 +1,8 @@
 ---
 title:  "Tomcat - 09 톰켓 쓰레드"
 search: true
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 comments: true
 categories:
   - Tomcat

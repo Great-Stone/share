@@ -2,7 +2,7 @@
 title:  "Container Runtimes 비교 표"
 search: true
 toc: false
-toc_sticky: true
+toc_sticky: false
 comments: true
 categories: 
   - Container
