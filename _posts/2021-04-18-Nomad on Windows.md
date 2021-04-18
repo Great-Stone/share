@@ -17,13 +17,11 @@ Nomad를 Windows환경에 구성하고 실행을위해 서비스로 등록하는
 
 # Nomad on Windows
 
-> 참고 url : https://learn.hashicorp.com/tutorials/nomad/production-deployment-guide-vm-with-consul
-
 
 
 ## Port 구성
 
-> 참고 url : https://www.nomadproject.io/docs/install/production/requirements#ports-used
+> 참고 url : [Port used](https://www.nomadproject.io/docs/install/production/requirements#ports-used)
 
 Nomad는 서버와 클라이언트 모드로 나뉩니다. 서버를 위해서는 3 개의 포트가 필요하고 클라이언트에서는 2 개의 포트가 필요합니다. 클라이언트에 배포되는 애플리케이션에서 사용하는 포트를 동적으로 할당하는 영역을 구성합니다.
 
@@ -34,9 +32,9 @@ Nomad는 서버와 클라이언트 모드로 나뉩니다. 서버를 위해서�
 | Serf WAN | 4648       | TCP/UDP  | 서버간 LAN/WAN 으로 GOSSIP 프로토콜로 사용됩니다.            |
 | Dynamic  | 1025–60000 | TCP/UDP  | 클라이언트에서 사용할 동적 포트를 할당합니다.                |
 
-> Windows에서의 동적포트 설명은 다음을 참고합니다. : https://en.wikipedia.org/wiki/Ephemeral_port
+> Windows에서의 동적포트 설명은 다음을 참고합니다. : [Ephemeral_port](https://en.wikipedia.org/wiki/Ephemeral_port)
 >
-> Windows에서의 동적포트 설정은 다음을 참고합니다. : https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/default-dynamic-port-range-tcpip-chang
+> Windows에서의 동적포트 설정은 다음을 참고합니다. : [default-dynamic-port-range-tcpip-chang](https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/default-dynamic-port-range-tcpip-chang)
 
 
 
@@ -59,15 +57,15 @@ Nomad는 서버와 클라이언트 모드로 나뉩니다. 서버를 위해서�
 
 ## 설치
 
-> 설치 참고 url : https://www.nomadproject.io/docs/install
+> 설치 참고 url : [Install](https://www.nomadproject.io/docs/install)
 >
-> Dev모드 참고 url : https://learn.hashicorp.com/tutorials/nomad/get-started-run?in=nomad/get-started
+> Dev모드 참고 url : [Get Start](https://learn.hashicorp.com/tutorials/nomad/get-started-run?in=nomad/get-started)
 
 Windows에 설치하는 방식은 수동, Chocolatey, 컴파일 방식을 지원합니다. 여기서는 수동 구성 방법에 대해 설명합니다.
 
 미리 컴파일된 바이너리 파일은 다음의 경로에서 확인할 수 있습니다. 2021년 4월 18일 기준 1.0.4 버전이 최신 버전입니다.
 
-- 다운로드 url : https://releases.hashicorp.com/nomad/
+- 다운로드 url : [Releases HashiCorp - Nomad](https://releases.hashicorp.com/nomad/)
   - 오픈소스는 `nomad_<버전>` 으로 표기됩니다.
   - 엔터프라이즈는 `nomad_<버전>+ent` 로 표기됩니다.
 - Windows 환경을 위해 미리 컴파일된 바이너리는 32bit/64bit 로 구분됩니다.
@@ -113,9 +111,9 @@ PS C:₩hashicorp₩nomad₩bin> ./nomad agent -dev
 
 ## 설정
 
-> 설정 설명 url : https://www.nomadproject.io/docs/configuration
+> 설정 설명 url : [Configuration](https://www.nomadproject.io/docs/configuration)
 >
-> go_sockaddr_template : https://pkg.go.dev/github.com/hashicorp/go-sockaddr/template?utm_source=godoc
+> go_sockaddr_template : [go-sockaddr](https://pkg.go.dev/github.com/hashicorp/go-sockaddr/template?utm_source=godoc)
 
 Nomad 실행시 CLI 상에 설정을 하는 Inline 방식과 설정파일을 지정하는 방식으로 구성이 가능합니다. 여기서는 구성파일을 지정하도록 하는 방식을 설명합니다.
 
@@ -171,10 +169,8 @@ server_join {
   - meta : 배포할 조건을 사용자 정의하는 항목입니다. Label 이나 Tag와 비슷한 역할입니다. map 타입으로 여러줄을 나열하여 설정할 수 있습니다. 값은 쉼표로 구분하여 리스트처럼 사용할 수 있습니다.
   - options : 클라이언트 구성의 옵션을 지정합니다. 주로 실행 드라이버와 배포를 위한 설정을 위해 사용됩니다.
     - driver.raw_exec.enable : `raw_exec` 드라이버는 기본적으로 비활성화 되어있습니다. Windows에서는 `exec` 드라이버가 동작하지 않으므로 해당 드라이버를 활성화 합니다.
-    - exec : OS에서 지원하는 격리 기본 요소를 사용하여 배포 작업으로 할당되는 리소스에 대한 접근을 제한합니다.
-      https://www.nomadproject.io/docs/drivers/exec
-    - raw_exec :  OS 지원 격리 요소를 사용하지 않고 Nomad가 작업 실행시 동일한 사용자로 시작 됩니다.
-      https://www.nomadproject.io/docs/drivers/raw_exec
+    - [exec](https://www.nomadproject.io/docs/drivers/exec) : OS에서 지원하는 격리 기본 요소를 사용하여 배포 작업으로 할당되는 리소스에 대한 접근을 제한합니다.
+    - [raw_exec](https://www.nomadproject.io/docs/drivers/raw_exec) :  OS 지원 격리 요소를 사용하지 않고 Nomad가 작업 실행시 동일한 사용자로 시작 됩니다.
 - server_join : 서버와 클라이언트 구성의 경우, 또는 서버 HA 구성의 경우 서버 접속을 위한 주소를 나열합니다.
 
 
@@ -205,7 +201,7 @@ net start nomad
 
 ## 테스트
 
-> Job 구성 url : https://learn.hashicorp.com/tutorials/nomad/jobs-configuring?in=nomad/manage-jobs
+> Job 구성 url : [Manage-job](https://learn.hashicorp.com/tutorials/nomad/jobs-configuring?in=nomad/manage-jobs)
 
 Windows에서만 실행되는 커맨드를 활용하여 동작을 테스트 합니다.
 
@@ -243,8 +239,7 @@ job "test" {
 - group : job에서 함께 실행될 단위를 지정합니다. task가 여럿 할당될 수 있습니다.
 - count : group에서 실행되는 배포의 개수를 지정합니다.
 - task : 실제 동작하는 배포 형식을 정의 합니다.
-  - driver : task로 실행할 배포 형태 드라이버를 지정합니다. 대표적으로 exec, raw_exec, java, docker 등이 있습니다.
-    https://www.nomadproject.io/docs/drivers
+  - [driver](https://www.nomadproject.io/docs/drivers) : task로 실행할 배포 형태 드라이버를 지정합니다. 대표적으로 exec, raw_exec, java, docker 등이 있습니다.
   - config : `driver` 의 실행을위한 구성을 정의합니다. 예제에서는 `raw_exec` 를 사용하였으므로 `command` 를 입력합니다.
 
 job의 내용은 파일로 구성하여 CLI로 등록하는 것도 가능하고 UI에서 입력하는 것도 가능합니다. UI등록의 예는 다음과 같습니다.
