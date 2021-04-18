@@ -107,8 +107,7 @@ PS C:₩hashicorp₩nomad₩bin> ./nomad agent -dev
 ```
 
 실행 후 나열된 정보를 사용하여 UI에 접속해봅니다.
-
-![DESKTOP-LenovoMini 2021-04-18 09-40-05](/var/folders/5r/8y6t82xd1h183tq1l_whv8yw0000gn/T/com.monosnap.monosnap/DESKTOP-LenovoMini 2021-04-18 09-40-05.png)
+![image-20210418110743732](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/image-20210418110743732.png)
 
 
 
@@ -251,7 +250,7 @@ job "test" {
 job의 내용은 파일로 구성하여 CLI로 등록하는 것도 가능하고 UI에서 입력하는 것도 가능합니다. UI등록의 예는 다음과 같습니다.
 
 1. UI의 좌측 `Jobs` 를 클릭하여 우측 상단의 `Run Job` 버튼을 클릭합니다.
-   ![Jobs - Nomad 2021-04-18 10-46-19](/var/folders/5r/8y6t82xd1h183tq1l_whv8yw0000gn/T/com.monosnap.monosnap/Jobs - Nomad 2021-04-18 10-46-19.png)
+   ![image-20210418110840679](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/image-20210418110840679.png)
 
 2. `Job Definition` 란에 job 정의를 채우고 `Plan`을 클릭합니다.
    ![Run a job - Nomad 2021-04-18 10-47-26](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/Run%20a%20job%20-%20Nomad%202021-04-18%2010-47-26.png)
