@@ -282,6 +282,24 @@ consul-z2z9k                                                  1/1     Running   
 
 ### 1.5 설치 후 추가 가이드(Option)
 
+#### ProxyDefaults
+
+helm 0.30.+ 에서는 Proxy Defaults 구성을 적용해줍니다.
+
+```bash
+kubectl apply -f - <<EOF
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ProxyDefaults
+metadata:
+  name: global
+spec:
+  meshGateway:
+    mode: local
+EOF
+```
+
+
+
 #### port-forward
 
 Consul UI에 접혹하기 위해 `port-forward` 를 사용하는 경우 다음과 같이 설정하여 접근가능합니다.
@@ -643,6 +661,17 @@ SERVICE_NAME: Consul
 Secondary Datacenter인 BM/VM 환경에서 `primary_datacenter`를 지정하였기 때문에 기동 후 Kubernetes의 Consul과 Join되어 Federation이 구성됩니다.
 
 ![Nodes - Consul 2021-06-26 14-11-08](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/Nodes%20-%20Consul%202021-06-26%2014-11-08.png)
+
+Kubernetes 환경에서 다음과 같이 조회할 수 있습니다.
+
+```bash
+$ kubectl exec statefulset/consul-server -- consul members -wan                         
+Node                    Address            Status  Type    Build   Protocol  DC      Segment
+consul-server-0.gs-k8s  10.240.0.5:8302    alive   server  1.9.4   2         gs-k8s  <all>
+consul-server-1.gs-k8s  10.240.0.4:8302    alive   server  1.9.4   2         gs-k8s  <all>
+consul-server-2.gs-k8s  10.240.0.6:8302    alive   server  1.9.4   2         gs-k8s  <all>
+consul-server.gs-vm     20.194.28.41:8302  alive   server  1.10.0  2         gs-vm   <all>
+```
 
 
 
