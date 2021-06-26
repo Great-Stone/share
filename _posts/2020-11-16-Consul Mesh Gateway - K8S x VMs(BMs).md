@@ -13,8 +13,6 @@ Consul을 사용하여 K8S와 VM 환경의 두 Consul로 구성된 데이터센�
 
 [ Consul | Features ]
 
-# Consul Mesh Gateway for Hybrid Cloud - K8S x VMs(BMs)
-
 ### 구성 개요
 
 네트워크 영역이 분리되어있는 두 환경의 애플리케이션 서비스들을 Service Mesh로 구성하는 방법을 알아 봅니다. 이번 구성 예에서는 Kubernetes와 Baremetal(BM)이나 VirtualMachine(VM)에 Consul Cluster(Datacenter)를 구성하고 각 환경의 애플리케이션 서비스를 Mesh Gateway로 연계합니다. 
@@ -28,8 +26,6 @@ Consul의 각 Cluster는 Datacenter라는 명칭으로 구분됩니다. **이번
 - 각 Application을 위한 Sidecar를 구성합니다.
 - Mesh Gateway를 구성하기 위해서는 모든 Sidecars는 Envoy 로 구성되어야 합니다.
 - Mesh Gateway를 구성하기 위해서는 Sidecar와 Consul이 TLS로 통신해야 합니다.
-
-
 
 ### Port 구성 참고
 
@@ -83,12 +79,59 @@ ports {
 ## 0. 사전 준비 사항
 
 - Kubernetes가 설치되어있어야 하며, 작업을 수행할 환경에서 접속 가능한 상태여야 합니다.
+
 - Helm3 혹은 Helm2를 설치합니다.
   - Installing Helm : https://helm.sh/docs/intro/install/
+  
 - Consul 을 실행할 수 있도록 준비합니다.
   - Install Consul : https://www.consul.io/docs/install
+  
+- 2021년 6월 26일 기준으로 구성한 버전은 다음과 같습니다.
 
+  - consul helm (k8s)
 
+    ```bash
+    $ helm show chart hashicorp/consul 
+    annotations:
+      artifacthub.io/images: |
+        - name: consul
+          image: hashicorp/consul:1.10.0
+        - name: consul-k8s
+          image: hashicorp/consul-k8s:0.26.0
+        - name: envoy
+          image: envoyproxy/envoy-alpine:v1.18.3
+      artifacthub.io/license: MPL-2.0
+      artifacthub.io/links: |
+        - name: Documentation
+          url: https://www.consul.io/docs/k8s
+        - name: hashicorp/consul-helm
+          url: https://github.com/hashicorp/consul-helm
+        - name: hashicorp/consul
+          url: https://github.com/hashicorp/consul
+        - name: hashicorp/consul-k8s
+          url: https://github.com/hashicorp/consul-k8s
+      artifacthub.io/prerelease: "false"
+    apiVersion: v2
+    appVersion: 1.10.0
+    description: Official HashiCorp Consul Chart
+    home: https://www.consul.io
+    icon: https://raw.githubusercontent.com/hashicorp/consul-helm/master/assets/icon.png
+    kubeVersion: '>=1.16.0-0'
+    name: consul
+    sources:
+    - https://github.com/hashicorp/consul
+    - https://github.com/hashicorp/consul-helm
+    - https://github.com/hashicorp/consul-k8s
+    version: 0.32.0
+    ```
+
+  - consul (vm)
+
+    ```bash
+    $ consul version
+    Consul v1.10.0
+    Revision 27de64da7
+    ```
 
 ## 1. Kubernetes에 Consul 설치
 
@@ -109,8 +152,8 @@ Consul 차트에 접근가능한지 확인합니다.
 
 ```bash
 $ helm search repo hashicorp/consul
-NAME                CHART VERSION   APP VERSION DESCRIPTION
-hashicorp/consul    0.25.0          1.8.4       Official HashiCorp Consul Chart
+NAME               CHART VERSION   APP VERSION     DESCRIPTION
+hashicorp/consul        0.32.0          1.10.0           Official HashiCorp Consul Chart
 ```
 
 
@@ -138,10 +181,10 @@ Helm 차트로 설치할 때 기본 설정을 엎어쓰는 파일을 생성하�
 ```yaml
 # consul.yaml
 global:
-  nale: consul
+  name: consul
   # 기본이미지(OSS 최신 버전)가 아닌 다른 버전의 컨테이너 이미지 또는 별도의 레지스트리를 사용하는 경우 명시합니다.
-  image: 'hashicorp/consul-enterprise:1.8.5-ent'
-  datacenter: 'tsis-k8s'
+  # image: 'hashicorp/consul-enterprise:1.8.5-ent'
+  datacenter: 'gs-k8s'
   tls:
     # Federation 구성을 위해서는 TLS가 반드시 활성화되어야 합니다.
     enabled: true
@@ -157,11 +200,19 @@ global:
     # gossip프로토콜은 암호화되어야 하며, 해당 키는 미리 Kubernetes에 Secret으로 구성합니다.
     secretName: consul-gossip-encryption-key
     secretKey: key
-  enableConsulNamespaces: true
+  # enableConsulNamespaces: true
 server:
-  enterpriseLicense:
-    secretName: consul-enterprise-license-key
-    secretKey: key
+  enabled: true
+  # 외부 DC와의 RPC를 위한 포트 오픈 여부입니다. client에서도 Gossip 포트를 활성화하는 경우 겹칠 수 있으므로 server.ports.serflan.port 를 8301이 아닌 포트로 지정합니다.
+  exposeGossipAndRPCPorts: true
+  ports:
+    serflan:
+      port: 9301
+  # enterpriseLicense:
+    # secretName: consul-enterprise-license-key
+    # secretKey: key
+client:
+  exposeGossipPorts: true
 connectInject:
   enabled: true
   centralConfig:
@@ -209,16 +260,18 @@ $ helm install consul hashicorp/consul -f consul.yaml --debug
 
 ```bash
 $ kubectl get pods
-consul-consul-mesh-gateway-754fbc5575-d8dgt                       2/2     Running   0          2m
-consul-consul-mesh-gateway-754fbc5575-wkvjh                       2/2     Running   0          2m
-consul-consul-mh5h6                                               1/1     Running   0          2m
-consul-consul-mx4mn                                               1/1     Running   0          2m
-consul-consul-rlb5x                                               1/1     Running   0          2m
-consul-consul-server-0                                            1/1     Running   0          2m
-consul-consul-server-1                                            1/1     Running   0          2m
-consul-consul-server-2                                            1/1     Running   0          2m
-consul-consul-tbngg                                               1/1     Running   1          2m
-consul-consul-tz9ct                                               1/1     Running   0          2m
+NAME                                                          READY   STATUS    RESTARTS   AGE
+consul-connect-injector-webhook-deployment-65bd899847-z6q5v   1/1     Running   0          15h
+consul-f66v2                                                  1/1     Running   0          15h
+consul-hnsvg                                                  1/1     Running   0          15h
+consul-ingress-gateway-848d47ffbf-86ct9                       2/2     Running   0          15h
+consul-ingress-gateway-848d47ffbf-hshbn                       2/2     Running   0          15h
+consul-mesh-gateway-55dd6498fb-br579                          2/2     Running   0          15h
+consul-mesh-gateway-55dd6498fb-pkjc5                          2/2     Running   0          15h
+consul-server-0                                               1/1     Running   0          15h
+consul-server-1                                               1/1     Running   0          15h
+consul-server-2                                               1/1     Running   0          15h
+consul-z2z9k                                                  1/1     Running   0          15h
 ```
 
 - consul-server: 3중화되어 구성됩니다.
@@ -372,41 +425,43 @@ root 권한이 있다면 시스템의 기본 PATH로 지정되어있는 `/usr/lo
 
 Kubernetes에 구성된 Consul Datacenter가 Primary이기 때문에 해당 환경에서 TLS 인증서를 가져옵니다. 앞서 구성된 Kubernetes 환경에서 CA(Certificate authority cert)와 서명 키(Certificate Authority signing key)를 가져옵니다.
 
-```bash
-$ kubectl get secrets/consul-ca-cert --template='{{index .data "tls.crt" }}' | base64 -D > consul-agent-ca.pem
-$ kubectl get secrets/consul-ca-key --template='{{index .data "tls.key" }}' | base64 -D > consul-agent-ca-key.pem
-```
+
+
+- $ kubectl get secrets/consul-ca-cert --template='{{index .data "tls.crt" }}' | base64 -D > consul-agent-ca.pem
+- $ kubectl get secrets/consul-ca-key --template='{{index .data "tls.key" }}' | base64 -D > consul-agent-ca-key.pem
+
+
 
 두 파일이 생성된 위치에서 `consul tls`명령을 사용하여 서버에서 사용할 인증서를 생성합니다.
 
 ```bash
-$ consul tls cert create -server -dc=vm-dc
+$ consul tls cert create -server -dc=gs-vm -additional-dnsname=consul-server.server.gs-vm.consul
 ==> Using consul-agent-ca.pem and consul-agent-ca-key.pem
-==> Saved vm-dc-server-consul-0.pem
-==> Saved vm-dc-server-consul-0-key.pem
+==> Saved gs-vm-server-consul-0.pem
+==> Saved gs-vm-server-consul-0-key.pem
 ```
 
 동일한 위치에서 Client를 위한 인증서를 생성합니다.
 
 ```bash
-$ consul tls cert create -client -dc=vm-dc
+$ consul tls cert create -client -dc=gs-vm -additional-dnsname=consul-server.server.gs-vm.consul 
 ==> Using consul-agent-ca.pem and consul-agent-ca-key.pem
-==> Saved vm-dc-client-consul-0.pem
-==> Saved vm-dc-client-consul-0-key.pem
+==> Saved gs-vm-client-consul-0.pem
+==> Saved gs-vm-client-consul-0-key.pem
 ```
 
-CA 파일과 새로 생성한 파일을 Server와 Client 각 환경에 복사합니다. (e.g. /home/consul/consul-cert/vm-dc-server-consul-0.pem)
+CA 파일과 새로 생성한 파일을 Server와 Client 각 환경에 복사합니다. (e.g. /home/consul/consul-cert/gs-vm-server-consul-0.pem)
 
 앞서 생성한 파일 이름을 기준으로 복사 대상은 다음과 같습니다.
 
 - Server
   - consul-agent-ca.pem
-  - vm-dc-server-consul-0.pem
-  - vm-dc-server-consul-0-key.pem
+  - gs-vm-server-consul-0.pem
+  - gs-vm-server-consul-0-key.pem
 - Client
   - consul-agent-ca.pem
-  - vm-dc-client-consul-0.pem
-  - vm-dc-client-consul-0-key.pem
+  - gs-vm-client-consul-0.pem
+  - gs-vm-client-consul-0-key.pem
 
 
 
@@ -423,9 +478,11 @@ server = true
 ui = true
 bootstrap_expect = 3
 node_name = "consul_server_01"
-datacenter = "vm-dc"
+datacenter = "gs-vm"
 client_addr = "0.0.0.0"
-bind_addr = "192.168.100.51"
+bind_addr = "{{ GetInterfaceIP \"eth0\" }}"
+advertise_addr_wan  = "20.194.24.41"
+translate_wan_addrs = true
 encrypt = "h65lqS3w4x42KP+n4Hn9RtK84Rx7zP3WSahZSyD5i1o="
 data_dir = "/var/lib/consul"
 retry_join = ["192.168.100.51","192.168.100.52","192.168.100.83"]
@@ -441,8 +498,8 @@ connect {
 }
 primary_datacenter = "k8s-dc"
 primary_gateways = ["172.16.1.111:31001","172.16.1.116:31001"]
-cert_file = "/root/consul-cert/vm-dc-server-consul-0.pem"
-key_file = "/root/consul-cert/vm-dc-server-consul-0-key.pem"
+cert_file = "/root/consul-cert/gs-vm-server-consul-0.pem"
+key_file = "/root/consul-cert/gs-vm-server-consul-0-key.pem"
 ca_file = "/root/consul-cert/consul-agent-ca.pem"
 ```
 
@@ -486,14 +543,14 @@ ca_file = "/root/consul-cert/consul-agent-ca.pem"
 
 ```ruby
 node_name = "consul_client_01"
-datacenter = "vm-dc"
+datacenter = "gs-vm"
 client_addr = "0.0.0.0"
 bind_addr = "192.168.100.54"
 encrypt = "h65lqS3w4x42KP+n4Hn9RtK84Rx7zP3WSahZSyD5i1o="
 data_dir = "/var/lib/consul"
 retry_join = ["192.168.100.51","192.168.100.52","192.168.100.53"]
-cert_file = "/root/consul-cert/vm-dc-client-consul-0.pem"
-key_file = "/root/consul-cert/vm-dc-client-consul-0-key.pem"
+cert_file = "/root/consul-cert/gs-vm-client-consul-0.pem"
+key_file = "/root/consul-cert/gs-vm-client-consul-0-key.pem"
 ca_file = "/root/consul-cert/consul-agent-ca.pem"
 ```
 
@@ -585,9 +642,7 @@ SERVICE_NAME: Consul
 
 Secondary Datacenter인 BM/VM 환경에서 `primary_datacenter`를 지정하였기 때문에 기동 후 Kubernetes의 Consul과 Join되어 Federation이 구성됩니다.
 
-![Consul-Federation](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/consul-datacenter-dropdown.png)
-
-
+![Nodes - Consul 2021-06-26 14-11-08](https://raw.githubusercontent.com/Great-Stone/images/master/uPic/Nodes%20-%20Consul%202021-06-26%2014-11-08.png)
 
 
 
@@ -599,18 +654,19 @@ Mesh Gateway를 구성하여 Service Mesh 환경이 멀티/하이브리드 Datac
 
 ### 3.1 Envoy 설치
 
-Consul의 각 버전별 지원하는 Envoy 버전은 다음 표와 같습니다.
+Consul의 각 버전별 지원하는 Envoy 버전은 다음 표와 같습니다. (2021년 6월 26일 기준)
 
 | Consul Version      | Compatible Envoy Versions        |
 | :------------------ | :------------------------------- |
-| 1.9.x               | 1.16.0, 1.15.2, 1.14.5‡, 1.13.6‡ |
-| 1.8.x               | 1.14.5, 1.13.6, 1.12.7, 1.11.2   |
-| 1.7.x               | 1.13.6, 1.12.7, 1.11.2, 1.10.0*  |
+| 1.10.x              | 1.18.3, 1.17.3, 1.16.4, 1.15.5   |
+| 1.9.x               | 1.16.4, 1.15.5, 1.14.7‡, 1.13.7‡ |
+| 1.8.x               | 1.14.7, 1.13.7, 1.12.7, 1.11.2   |
+| 1.7.x               | 1.13.7, 1.12.7, 1.11.2, 1.10.0*  |
 | 1.6.x, 1.5.3, 1.5.2 | 1.11.1, 1.10.0, 1.9.1, 1.8.0†    |
 | 1.5.1, 1.5.0        | 1.9.1, 1.8.0†                    |
 | 1.4.x, 1.3.x        | 1.9.1, 1.8.0†, 1.7.0†            |
 
-‡ Consul 1.9.x는 1.15.0+의 Envoy를 권장합니다.
+‡ 리스너의 업데이트 개선으로 Consul 1.9.0+ 의 Envoy 1.15.0+를 권장합니다.
 
 † 1.9.1 버전 이하의 Envoy는 [CVE-2019-9900](https://github.com/envoyproxy/envoy/issues/6434), [CVE-2019-9901](https://github.com/envoyproxy/envoy/issues/6435) 취약점이 보고되었습니다.
 
@@ -622,15 +678,8 @@ Consul의 각 버전별 지원하는 Envoy 버전은 다음 표와 같습니다.
 
 ```bash
 $ curl -L https://getenvoy.io/cli | sudo bash -s -- -b /usr/local/bin
-$ getenvoy run standard:1.14.5 -- --version
+$ getenvoy run standard:1.18.3 -- --version
 ```
-
-
-
-Windows 환경에서의 Envoy는 Native Build가 진행중이며, 2020년 9월 20일 기준 Alpha 버전에 대한 소개와 블드관련 방법에 대해 문서가 제공됩니다.
-
-- Windows에서 Envoy에 대한 알파 지원 발표 : https://blog.envoyproxy.io/announcing-alpha-support-for-envoy-on-windows-d2c53c51de7b
-- 빌드 방법 안내 : https://github.com/envoyproxy/envoy/tree/master/bazel#building-envoy-with-bazel
 
 
 
@@ -644,14 +693,15 @@ $ export CONSUL_HTTP_ADDR=https://127.0.0.1:8501
 $ consul connect envoy -gateway=mesh -register -expose-servers \
   -service "mesh-gateway-secondary" \
   -ca-file=/root/consul-cert/consul-agent-ca.pem \
-  -client-cert=/root/consul-cert/vm-dc-client-consul-0.pem \
-  -client-key=/root/consul-cert/vm-dc-client-consul-0-key.pem \
-  -address '{{ GetInterfaceIP "lo" }}:9100' \
-  -wan-address '{{ GetInterfaceIP "eth0" }}:9100' -admin-bind=127.0.0.1:19001 &
+  -client-cert=/root/consul-cert/gs-vm-client-consul-0.pem \
+  -client-key=/root/consul-cert/gs-vm-client-consul-0-key.pem \
+  -address ':9100' \
+  -wan-address ':9100' \
+  -admin-bind=127.0.0.1:19001 &
 ```
 
 - service : Consul에 등록되는 Mesh Gateway의 서비스 이름 입니다.
-- {{ GetInterfaceIP "<interface>" }} : Consul에서 사용하는 템플릿 값입니다. 이렇게 작성하면 Network설정에서 해당 인터페이스에 지정된 IP를 받아올 수 있습니다.
+- {{ GetInterfaceIP "<interface>" }} : Consul에서 사용하는 템플릿 값입니다. 이렇게 작성하면 Network설정에서 해당 인터페이스에 지정된 IP를 받아올 수 있습니다. address 지정시 '{{ GetInterfaceIP "eth0" }}' 와같이 지정 가능합니다.
 - admin-bind : Envoy의 관리자 바인딩을 설정합니다. 동일한 호스트에서 여러개의 Envoy를 실행하는 경우 Admin Port가 중복될 수 있습니다. 기본값은 19000 입니다.
 - 백그라운드 실행을 위해 끝에 `&`를 붙였습니다. 원하지 않으시면 제거하여 포그라운드로 띄우셔도 됩니다.
 
@@ -774,8 +824,8 @@ dashboard-vm
 ```bash
 $ consul connect envoy -sidecar-for dashboard-vm \
   -ca-file=/root/consul-cert/consul-agent-ca.pem \
-  -client-cert=/root/consul-cert/vm-dc-client-consul-0.pem \
-  -client-key=/root/consul-cert/vm-dc-client-consul-0-key.pem &
+  -client-cert=/root/consul-cert/gs-vm-client-consul-0.pem \
+  -client-key=/root/consul-cert/gs-vm-client-consul-0-key.pem &
   
 $ consul catalog services
 consul
